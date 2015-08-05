@@ -1,0 +1,24 @@
+{
+  "name": "qlik-sp4ce-init",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pouc/qlik-sp4ce-init.git"
+  },
+  "author": "pouc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pouc/qlik-sp4ce-init/issues"
+  },
+  "homepage": "https://github.com/pouc/qlik-sp4ce-init#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "promise": "^7.0.4",
+    "qlik-utils": "^1.0.14"
+  }
+}
