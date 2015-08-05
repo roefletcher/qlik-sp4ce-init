@@ -9,7 +9,7 @@ var readFile = promise.denodeify(fs.readFile)
 
 app.get('/init', function(req, res) {
 
-    var cert = utils.ifnotundef(req.query.cert, 'C:\\ProgramData\\Qlik\\Sense\\Repository\\Exported Certificates\\localhost');
+    var cert = utils.ifnotundef(req.query.cert, 'C:\\ProgramData\\Qlik\\Sense\\Repository\\Exported Certificates\\localhost\\client.pfx');
     var host = utils.ifnotundef(req.query.host, 'localhost');
     var ip = utils.ifnotundef(req.query.ip, req.headers.host.match(/([^:]+)(:([0-9]+))?/)[1])
 
