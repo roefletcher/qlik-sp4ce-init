@@ -1,33 +1,24 @@
+var requireDir = require('require-dir');
+var dir = requireDir('init', {recurse: true});
+
 var express = require('express');
-var utils = require('qlik-utils');
-var promise = require('promise');
-var fs = require('fs');
-
 var app = express();
-
-var readFile = promise.denodeify(fs.readFile)
 
 app.get('/init', function(req, res) {
 
-    var cert = utils.ifnotundef(req.query.cert, 'C:\\ProgramData\\Qlik\\Sense\\Repository\\Exported Certificates\\localhost\\client.pfx');
-    var host = utils.ifnotundef(req.query.host, 'localhost');
-    var ip = utils.ifnotundef(req.query.ip, req.headers.host.match(/([^:]+)(:([0-9]+))?/)[1])
+    var ret = [];
+    for (var key in dir) {
+        if (dir.hasOwnProperty(key)) {
+            var obj = dir[key];
+            ret.push(obj.index.init(req.query, req.headers));
+        }
+    }
 
-    readFile(cert).then(function(certif) {
-
-        return utils.addToWhiteList(ip, {
-            restUri: 'https://' + host + ':4242',
-            pfx: certif,
-            passPhrase: '',
-            UserId: 'qlikservice',
-            UserDirectory: '2008R2-0'
-        });
-
-    }).then(function(ret) {
-        console.log(ret);
-    }, function(ret) {
-        console.log(ret);
-    });
+    Promise.all(ret).then(function(retVal) {
+        res.send(retVal);
+    }, function(retVal) {
+        res.status(500).send(retVal);
+    })
 
 });
 
@@ -37,3 +28,4 @@ var server = app.listen(11337, function() {
 
     console.log('listening at %s:%s', host, port);
 })
+

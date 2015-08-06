@@ -1,0 +1,27 @@
+{
+  "name": "qlik-sp4ce-init-whitelist",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pouc/qlik-sp4ce-init-whitelist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pouc/qlik-sp4ce-init-whitelist/issues"
+  },
+  "homepage": "https://github.com/pouc/qlik-sp4ce-init-whitelist#readme",
+  "dependencies": {
+    "promise": "^7.0.4",
+    "qlik-utils": "^1.0.14"
+  },
+  "gitHead": "5841f946cf7ac02bdf293aa39211b186f2b9040f",
+  "readme": "ERROR: No README data found!",
+  "_id": "qlik-sp4ce-init-whitelist@1.0.1",
+  "_shasum": "3d21cfcdcccbf8e41222fb4b3c85f4acfdbd7469",
+  "_from": "qlik-sp4ce-init-whitelist@*"
+}
