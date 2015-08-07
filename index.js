@@ -3,8 +3,12 @@ var utils = require('qlik-utils')
 var requireDir = require('require-dir');
 var dir = requireDir('init', {recurse: true});
 
+var cors = require('cors')
+
 var express = require('express');
 var app = express();
+
+app.use(cors());
 
 var tasks = {}
 app.get('/init', function(req, res) {

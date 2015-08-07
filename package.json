@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/pouc/qlik-sp4ce-init#readme",
   "dependencies": {
+    "cors": "^2.7.1",
     "express": "^4.13.3",
     "node-uuid": "^1.4.3",
     "qlik-utils": "^1.0.18",
