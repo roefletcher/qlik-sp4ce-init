@@ -1,10 +1,28 @@
 # qlik-sp4ce-init
-the init process for sp4ce vms
 
-# Adds external ip to whitelist
+the init node serveur for sp4ce vms
+this is manly a wrapper for initialization modules
 
-Call :
+- [whitelist] (https://github.com/pouc/qlik-sp4ce-init-whitelist)
+
+put init modules in the init folder (must be created at the root of this project after npm install)
+
+# How to
+
+## To start the init
 
 ```
-http://<host>:11337/init?cert=<path to cert>&host=<ip/host name that node can use to reach the REST API>&ip=<ip/host name to add into the whitelist>
+http://<host>:11337/init?<params>
 ```
+
+This returns a Task object (see https://github.com/pouc/qlik-utils) (long poll)
+
+Parameters are described in their respective modules
+
+## To get the task status
+
+```
+http://<host>:11337/getProgress?guid=<guid>
+```
+
+This returns a Task object (long poll)
