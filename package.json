@@ -18,6 +18,8 @@
   "homepage": "https://github.com/pouc/qlik-sp4ce-init#readme",
   "dependencies": {
     "express": "^4.13.3",
+    "node-uuid": "^1.4.3",
+    "qlik-utils": "^1.0.18",
     "require-dir": "^0.3.0"
   }
 }
